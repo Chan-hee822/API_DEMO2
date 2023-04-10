@@ -52,7 +52,7 @@ public class wwwww {
                 }
                 ArrayList<String> arr = new ArrayList<>();
                 for (Wifi wifi : wifis) {
-                    //System.out.println(wifi.getX_SWIFI_ADRES1());
+                    System.out.println(wifi.getX_SWIFI_MGR_NO());
                     arr.add(wifi.getX_SWIFI_ADRES1());
                 }
                 System.out.println(arr.size());

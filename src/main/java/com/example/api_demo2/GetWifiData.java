@@ -11,6 +11,7 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 public class GetWifiData {
+    static ArrayList<Wifi> wifis = new ArrayList<>();
     public static void getWifiData() throws IOException {
         int start = 1;
         int end = 999;
@@ -41,7 +42,7 @@ public class GetWifiData {
                 JsonObject tbPublicWifiInfo = root.getAsJsonObject("TbPublicWifiInfo");
                 JsonArray row = tbPublicWifiInfo.getAsJsonArray("row");
 
-                List<Wifi> wifis = new ArrayList<>();
+                //List<Wifi> wifis = new ArrayList<>();
                 for (JsonElement element : row) {
                     Wifi station = gson.fromJson(element, Wifi.class);
                     wifis.add(station);
