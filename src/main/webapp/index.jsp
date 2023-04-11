@@ -5,8 +5,11 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
+    <h1><%= "Hello World!" %> </h1>
+        <body><% String username = (String) request.getAttribute("username"); %>
+
+        <p>Welcome, <%= username %>!</p>
+        </body>
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 </body>

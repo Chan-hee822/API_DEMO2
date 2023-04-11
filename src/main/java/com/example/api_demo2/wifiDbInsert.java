@@ -5,7 +5,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class wifiDb {
+public class wifiDbInsert {
 
 //    public void wifiDbInsert(){
 //
@@ -23,16 +23,15 @@ public class wifiDb {
             throw new RuntimeException(e);
         }
         Connection conn = null;
-        Statement stm = null;
         PreparedStatement pstm = null;
         ResultSet rs = null;
-        try {
-            GetWifiData.getWifiData();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            GetWifiData.getWifiData();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
         ArrayList<Wifi> wf = GetWifiData.wifis;
-        System.out.println(wf.size());
+        //System.out.println(wf.size());
         try {
             conn = DriverManager.getConnection(url, dbUserId, dbPassword);
 
