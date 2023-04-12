@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class InsertTop20Wifi {
-    public static void main(String[] args) {
+    public static void insertData(Double LAT, Double LNT) {
         double lat = 32.1916;
         double lnt = 123.3325;
         List<List> distances = WifiDistanceCalculator.calculateDistance(lat, lnt);
@@ -30,7 +30,7 @@ public class InsertTop20Wifi {
         try {
             //table 생성.
             conn = DriverManager.getConnection(url, dbUserId, dbPassword);
-            String tName1 = String.valueOf(lat).replace(".","") + "x" +String.valueOf(lnt).replace(".","");
+            String tName1 = String.valueOf(LAT).replace(".","") + "x" +String.valueOf(LNT).replace(".","");
 
             String sql2 = String.format(" insert into TOP20_%s (DISTANCE, LAT, LNT) values (?,?,?); ", tName1);
             pstm2 = conn.prepareStatement(sql2);

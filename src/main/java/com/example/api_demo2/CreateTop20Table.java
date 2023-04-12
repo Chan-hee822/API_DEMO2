@@ -7,9 +7,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class CreateTop20Table {
-    static double lat = 32.1916;
-    static double lnt = 123.3325;
-    public static void main(String[] args) {
+//    static double lat = 32.1916;
+//    static double lnt = 123.3325;
+    public static void createTable(Double LAT, Double LNT) {
 
         String url = "jdbc:mariadb://localhost:3306/testdb3";
         String dbUserId = "testuser3";
@@ -28,7 +28,7 @@ public class CreateTop20Table {
         try {
             //table 생성.
             conn = DriverManager.getConnection(url, dbUserId, dbPassword);
-            String tName1 = String.valueOf(lat).replace(".","") + "x" +String.valueOf(lnt).replace(".","");
+            String tName1 = String.valueOf(LAT).replace(".","") + "x" +String.valueOf(LNT).replace(".","");
 
             String sql1 = String.format(" CREATE TABLE TOP20_%s (DISTANCE DOUBLE, LAT DOUBLE, LNT DOUBLE); ",tName1);
             pstm = conn.prepareStatement(sql1);
